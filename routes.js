@@ -35,8 +35,5 @@ router.get('/:date', (req, res, next) => {
   res.json(dateObj);
 });
 
-// Note 1: Format validation is needed or else moment.js will do interesting things like accept November 31, 2016 and convert it to December 1, 2016 in the returned JSON.
-
-// Note 2: Solely numeric dates (ex. 11-30-16, or most variations thereof) have been excluded in the interest of not discriminating against either the group of people who choose to put their month first or the group of people who choose to put their day first.
 
 module.exports = router;
