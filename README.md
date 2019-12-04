@@ -6,8 +6,8 @@
 1. The API endpoint is `GET [project_url]/:date_string?`
 
 #### Example usage:
-* http://bdev-fcctimestamp/December%2004,%202019
-* https://bdev-fcctimestamp/1575417600000
+* http://bdev-fcctimestamp.glitch.me/December%2004,%202019
+* https://bdev-fcctimestamp.glitch.me/1575417600000
 
 
 ### Example Output:
