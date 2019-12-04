@@ -1,0 +1,30 @@
+{
+	"name": "fcc-api-projects-boilerplate",
+	"version": "0.0.1",
+	"description": "An FCC Backend Challenge",
+	"main": "routes.js",
+	"scripts": {
+		"start": "node routes.js"
+	},
+	"dependencies": {
+		"express": "^4.17.1",
+		"moment": "^2.24.0"
+	},
+	"engines": {
+		"node": "4.4.5"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://githost.com/camper/repo.git"
+	},
+	"keywords": [
+		"node",
+		"hyperdev",
+		"express",
+		"freecodecamp"
+	],
+	"license": "MIT",
+	"devDependencies": {
+		"nodemon": "^2.0.1"
+	}
+}
