@@ -1,4 +1,5 @@
 dependencies:
+  cors: 2.8.5
   express: 4.17.1
 devDependencies:
   nodemon: 1.19.4
@@ -324,6 +325,15 @@ packages:
     dev: true
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /cors/2.8.5:
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
+    dev: false
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
   /create-error-class/3.0.2:
     dependencies:
       capture-stack-trace: 1.0.1
@@ -1197,6 +1207,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-NakjLfo11wZ7TLLd8jV7GHFTbF8=
+  /object-assign/4.1.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
   /object-copy/0.1.0:
     dependencies:
       copy-descriptor: 0.1.1
@@ -1845,5 +1861,6 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  cors: ^2.8.0
   express: ^4.17.1
   nodemon: ^1.11.0

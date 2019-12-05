@@ -1,52 +1,50 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Timestamp Service (:</title>
-    <meta name="description" content="A cool thing made with Glitch" />
-    <link
-      id="favicon"
-      rel="icon"
-      href="https://glitch.com/edit/favicon-app.ico"
-      type="image/x-icon"
-    />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <title>Timestamp Microservice</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 text-center">
-          <h1>
-            API Project: Timestamp Microservice for FCC
-          </h1>
-          <p>
-            By Barış TÜRE
-          </p>
-          <p>
-            Convert your date to unix time or natural. Use the url examples
-            <hr>
-          <a href="http://bdev-fcctimestamp.glitch.me/2019-12-04" target="_blank">http://bdev-fcctimestamp/2019-12-04</a><br><br>
-          <a href="http://bdev-fcctimestamp.glitch.me/1575417600" target="_blank">http://bdev-fcctimestamp/1575417600</a><br><br>
-            <hr>
-          </p>
-        </div>
-        </div>
-        </div>
-
-
-    <!-- Your web-app is https, so your scripts need to be too -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"></script>
+    <div>
+      <h1>Timestamp Microservice</h1>
+      <h2>User Stories</h2>
+      <ol>
+        <li>The API endpoint is <code>GET [project_url]/api/timestamp/:date_string?</code></li>
+        <li>
+          A date string is valid if can be successfully parsed by <code>new Date(date_string)</code>.<br />
+          Note that the unix timestamp needs to be an <strong>integer</strong> (not a string) specifying
+          <strong>milliseconds</strong>.<br />
+          In our test we will use date strings compliant with ISO-8601 (e.g. <code>"2016-11-20"</code>) because this
+          will ensure an UTC timestamp.
+        </li>
+        <li>
+          If the date string is <strong>empty</strong> it should be equivalent to trigger <code>new Date()</code>, i.e.
+          the service uses the current timestamp.
+        </li>
+        <li>
+          If the date string is <strong>valid</strong> the api returns a JSON having the structure<br /><code
+            >{"unix": &lt;date.getTime()&gt;, "utc" : &lt;date.toUTCString()&gt; }</code
+          ><br />
+          e.g. <code>{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}</code>
+        </li>
+        <li>
+          If the date string is <strong>invalid</strong> the api returns a JSON having the structure <br />
+          <code>{"unix": null, "utc" : "Invalid Date" }</code>. It is what you get from the date manipulation functions
+          used above.
+        </li>
+      </ol>
+      <h2>Examples</h2>
+      <ul>
+        <li>
+          <a href="/api/timestamp/" target="_blank">/api/timestamp/</a>
+        </li>
+        <li>
+          <a href="/api/timestamp/1991-03-20" target="_blank">/api/timestamp/1991-03-20</a>
+        </li>
+        <li>
+          <a href="/api/timestamp/1450137600" target="_blank">/api/timestamp/1450137600</a>
+        </li>
+        <li><a href="/api/timestamp/garbage" target="_blank">/api/timestamp/garbage</a></li>
+      </ul>
+    </div>
   </body>
 </html>
