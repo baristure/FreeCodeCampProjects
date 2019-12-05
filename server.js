@@ -1,11 +1,18 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var app = express();
 
-app.get('/api/timestamp/:dateString?', (request, response) => {
-  const dateString = request.params.dateString;
+
+// We need CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) for our APIs remotely testable by FCC 
+var cors = require('cors');
+app.use(cors({optionSuccessStatus: 200}));
+
+
+
+app.get('/api/timestamp/:dateString?', (req, res) => {
+  const dateString = req.params.dateString;
 
   let date;
-  // If the date string is empty it should be equivalent to trigger new Date(), i.e. the service uses the current timestamp.
+  // If the date string is empty, it should be equivalent to new Date(), i.e. the service uses the current timestamp.
   if (!dateString) {
     date = new Date();
   } else {
@@ -17,22 +24,24 @@ app.get('/api/timestamp/:dateString?', (request, response) => {
       date = new Date(dateString);
     }
   }
-  // If the date string is invalid the api returns a JSON having the structure  {"error" : "Invalid Date" }.
+  // If the date string is invalid the api returns an error JSON {"error" : "Invalid Date" }
   if (date.toString() === 'Invalid Date') {
-    response.json({ error: date.toString() });
+    res.json({ error: date.toString() });
   } else {
-    // If the date string is valid the api returns a JSON having the structure {"unix": <date.getTime()>, "utc" : <date.toUTCString()> }
-    response.json({ unix: date.getTime(), utc: date.toUTCString() });
+    // If the date string is valid the api returns a JSON like this format {"unix": <date.getTime()>, "utc" : <date.toUTCString()> }
+    res.json({ unix: date.getTime(), utc: date.toUTCString() });
   }
 });
 
-app.use(express.static('public'));
 
-app.get('/', (request, response) => {
-  response.sendFile(`${__dirname}/views/index.html`);
+//Shows our index.html file
+app.use(express.static('public'));
+app.get('/', (req, res) => {
+  res.sendFile(`${__dirname}/views/index.html`);
 });
 
-const portNumber = process.env.PORT || 8000;
-app.listen(portNumber, () => {
-  console.log(`listening on port ${portNumber}`);
+
+// listen for requests :)
+var listener = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + listener.address().port);
 });
