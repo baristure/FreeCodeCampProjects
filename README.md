@@ -11,8 +11,8 @@ e.g. `{"unix": 1575550081352 ,"utc": "Sun, 05 Dec 2019 17:31:29 GMT"}`.
 5. If the date string is **invalid** the api returns a JSON having the structure `{"unix": null, "utc" : "Invalid Date" }`. It is what you get from the date manipulation functions used above.
 
 #### Example usage:
-* http://bdev-fcctimestamp.glitch.me/1991-03-20
-* https://bdev-fcctimestamp.glitch.me/669427200000
+* http://bdev-fcctimestamp.glitch.me/api/timestamp/1991-03-20
+* https://bdev-fcctimestamp.glitch.me/api/timestamp/669427200000
 
 
 ### Example Output:
