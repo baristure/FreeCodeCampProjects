@@ -11,7 +11,8 @@
     "cors": "^2.8.5",
     "express": "^5.0.0-alpha.2",
     "mongodb": "^3.3.4",
-    "mongoose": "^5.7.13"
+    "mongoose": "^5.7.13",
+    "dns":"0.2.2"
   },
   "engines": {
     "node": "4.4.5"
