@@ -1,6 +1,7 @@
 dependencies:
   cors: 2.8.5
   express: 5.0.0-alpha.7
+  request-ip: 2.1.3
 packages:
   /accepts/1.3.7:
     dependencies:
@@ -204,6 +205,10 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-M4Sjn6N/+O6/IXSJseKqHoFc+5FdGJ22sXqnjTpdZweHK64MzEPAyQZyEU3R/KRv2GLoa7nNtg/C2Ev6m7z+eA==
+  /is_js/0.9.0:
+    dev: false
+    resolution:
+      integrity: sha1-CrlFQFArp6+iTIVqqYVWFmnpxS0=
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -311,6 +316,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-9esiElv1BrZoI3rCDuOuKCBRbuApGGaDPQfjSflGxdy4oyzqghxu6klEkkVIvBje+FF0BX9coEv8KqW6X/7njw==
+  /request-ip/2.1.3:
+    dependencies:
+      is_js: 0.9.0
+    dev: false
+    resolution:
+      integrity: sha512-J3qdE/IhVM3BXkwMIVO4yFrvhJlU3H7JH16+6yHucadT4fePnR8dyh+vEs6FIx0S2x5TCt2ptiPfHcn0sqhbYQ==
   /router/2.0.0-alpha.1:
     dependencies:
       array-flatten: 2.1.1
@@ -413,3 +424,4 @@ shrinkwrapVersion: 3
 specifiers:
   cors: ^2.8.5
   express: ^5.0.0-alpha.2
+  request-ip: ^2.1.3
