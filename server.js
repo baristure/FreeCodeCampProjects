@@ -11,15 +11,25 @@ var cors = require('cors');
 app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
 
 
+const requestIp = require('request-ip');
+// inside middleware handler
+var ipMiddleware = function(req, res, next) {
+    const clientIp = requestIp.getClientIp(req); 
+    next();
+};
+// on localhost you'll see 127.0.0.1 if you're using IPv4 
+// or ::1, ::ffff:127.0.0.1 if you're using IPv6
+//As Connect Middleware
+app.use(requestIp.mw())
 
 app.get('/api/whoami', (req, res) => {
-var ipadress = req.ip;
+var ipadress = req.clientIp;
+var language = req.acceptsLanguages();
 var software=req.get('User-Agent');
-  var language = req.acceptsLanguages();
     res.json({
       ipadress: ipadress,
       language:language[0],
-      software:software
+      software:software.slice(software.indexOf("(") + 1, software.indexOf(")"))
     });
 });
 
