@@ -19,10 +19,16 @@
     "pug": "^2.0.4",
     "passport": "^0.4.1",
     "express-session": "^1.16.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "mongoose": "^5.8.3",
+    "bcrypt": "^3.0.7",
+    "passport-github": "^1.1.0",
+    "socket.io": "^2.3.0",
+    "passport.socketio": "^3.7.0",
+    "cookie-parser": "^1.4.4"
   },
   "engines": {
-    "node": "4.4.3"
+    "node": "12.14.0"
   },
   "repository": {
     "type": "git",
