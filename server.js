@@ -1,13 +1,16 @@
 'use strict';
 
-var express     = require('express');
-var bodyParser  = require('body-parser');
-var expect      = require('chai').expect;
-var cors        = require('cors');
+const express     = require('express');
+const bodyParser  = require('body-parser');
+const expect      = require('chai').expect;
+const cors        = require('cors');
+const mongoose = require('mongoose');
+const mongo = require("mongodb").MongoClient;
+const ObjectID = require("mongodb").ObjectID;
 
-var apiRoutes         = require('./routes/api.js');
-var fccTestingRoutes  = require('./routes/fcctesting.js');
-var runner            = require('./test-runner');
+const apiRoutes         = require('./routes/api.js');
+const fccTestingRoutes  = require('./routes/fcctesting.js');
+const runner            = require('./test-runner');
 
 var app = express();
 
@@ -19,6 +22,14 @@ app.use(cors({origin: '*'})); //For FCC testing purposes only
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
+
+
+
+
+
 
 //Sample front-end
 app.route('/:project/')
@@ -61,5 +72,4 @@ app.listen(process.env.PORT || 3000, function () {
     }, 3500);
   }
 });
-
 module.exports = app; //for testing
