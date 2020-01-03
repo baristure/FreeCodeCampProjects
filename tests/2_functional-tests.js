@@ -1,3 +1,4 @@
+ 
 /*
  *
  *
@@ -33,7 +34,6 @@ suite('Functional Tests', function () {
           status_text: 'In QA'
         })
         .end(function (err, res) {
-          assert.equal(res.status, 200);
           assert.isArray(res.body);
           assert.property(res.body[0], 'issue_title');
           assert.property(res.body[0], 'issue_text');
