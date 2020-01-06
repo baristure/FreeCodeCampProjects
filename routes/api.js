@@ -12,7 +12,6 @@ var expect = require("chai").expect;
 var MongoClient = require("mongodb").MongoClient;
 var ObjectId = require("mongodb").ObjectId;
 var mongoose = require("mongoose");
-var Joi = require("joi");
 var db;
 //Example connection: MongoClient.connect(MONGODB_CONNECTION_STRING, function(err, db) {});
 MongoClient.connect(
