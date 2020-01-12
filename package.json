@@ -16,7 +16,8 @@
     "mocha": "^7.0.0",
     "zombie": "^6.1.4",
     "helmet": "^3.21.2",
-    "mongoose": "^5.8.5"
+    "mongoose": "^5.8.7",
+    "axios": "^0.19.1"
   },
   "engines": {
     "node": "4.4.3"
